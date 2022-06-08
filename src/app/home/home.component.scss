@@ -1,0 +1,17 @@
+@import '../../themes/variables-light.scss';
+@import '../../styles.scss';
+
+.main {
+    max-width: 343px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.title{
+    margin: 0px 18px 0px 18px;
+    text-align: center;
+    margin-bottom: 56px;
+}

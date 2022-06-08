@@ -1,0 +1,87 @@
+@import '../../../themes/variables-light.scss';
+@import '../../../styles.scss';
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.page-links {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  margin-left: 1rem;
+  column-gap: 1.5rem;
+}
+
+.page-link {
+  cursor: pointer;
+  padding-bottom: 0.5rem;
+  margin-bottom: -2.6rem;
+  text-decoration: none;
+  border-bottom: 0.15rem solid transparent;
+  font-size: 18px;
+  font-weight: 700;
+  color: $cl-grey;
+
+  &.active {
+    color: $cl-primary;
+    border-bottom: 0.15rem solid $cl-primary;
+  }
+}
+
+.level-details-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+
+  .level-icon {
+    margin-right: 1rem;
+  }
+
+  .level-description {
+    display: flex;
+    align-items: center;
+
+    .level-current {
+      margin-right: 2rem;
+      font-weight: 700;
+      font-size: 14px;
+      text-transform: uppercase;
+    }
+
+    .level-miss {
+      margin-right: 1rem;
+      font-weight: 400;
+      font-size: 12px;
+      color: #83838F;
+    }
+
+    .level-next {
+      font-weight: 400;
+      font-size: 14px;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.profile-container {
+  display: flex;
+  align-items: center;
+
+  .profile-salution {
+    font-weight: 500;
+    font-size: 16px;
+    text-align: center;
+    color: #191935;
+    margin-right: 2rem;
+  }
+
+  .profile-image {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+  }
+}

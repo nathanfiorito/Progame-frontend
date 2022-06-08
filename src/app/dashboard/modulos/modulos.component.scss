@@ -1,0 +1,16 @@
+main {
+  padding: 1.5rem;
+}
+
+.title-n-tasks {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  p {
+    font-weight: 500;
+    font-size: 20px;
+    text-align: center;
+    color: #83838F;
+  }
+}

@@ -1,0 +1,67 @@
+<div class="grid">
+    <div class='login'>
+        <div class="form center">
+            <a (click)='redirectToHome()'><img class='logo' src='../../../assets/logo.svg'></a>
+            <form class='form' [formGroup]="formConfirmation" novalidate>
+                <div class='header'>
+                    <p class='fsize-28 fweight-bolder mb-16'>Verificação</p>
+                    <p class='fsize-16 fweight-500 opacity-66'>Insira o código que foi enviado para o e-mail:</p>
+                </div>
+                <div class="inputs">
+                    <div>
+                        <input #num1
+                        class='txt-input center block' 
+                        formControlName='num1' 
+                        type='text'
+                        pattern="\d*"
+                        maxlength="1"
+                        (keyup)="move($event, '', num1, num2)">
+
+                    </div>
+                    <div>
+                        <input #num2
+                        class='txt-input center block' 
+                        formControlName='num2' 
+                        type='text'
+                        pattern="\d*"
+                        maxlength="1"
+                        (keyup)="move($event, num1, num2, num3)">
+
+                    </div>
+                    <div>
+                        <input #num3
+                        class='txt-input center block' 
+                        formControlName='num3' 
+                        type='text'
+                        pattern="\d*"
+                        maxlength="1"
+                        (keyup)="move($event, num2, num3, num4)">
+                    </div>
+                    <div>
+                        <input #num4
+                        class='txt-input center block' 
+                        formControlName='num4' 
+                        type='text'
+                        pattern="\d*"
+                        maxlength="1"
+                        (keyup)="move($event, num3, num4, num5)">
+                    </div>
+                    <div>
+                        <input #num5
+                        class='txt-input center block' 
+                        formControlName='num5' 
+                        type='text'
+                        pattern="\d*"
+                        maxlength="1"
+                        (keyup)="move($event, num4, num5, '')">
+                    </div>
+                </div>
+
+                <button class='btn-cl-primary center block mt-8' (click)='submitCode()'><span class='btn-title'>Confirmar</span></button>
+            </form>
+        </div>
+    </div>
+    <div class='bg bg-cl-primary right'>
+        <img class='center-image' src='../../../assets/bg-img.svg'>
+    </div>
+</div>

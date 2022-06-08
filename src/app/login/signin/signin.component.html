@@ -1,0 +1,50 @@
+<div class="grid">
+    <div class='login'>
+        <div class="form center">
+            <a (click)='redirectToHome()'><img class='logo' src='../../../assets/logo.svg'></a>
+            <form class='form' [formGroup]="formLogin" novalidate>
+            <h1 class=''>Entre em sua conta</h1>
+                <input
+                class='txt-input center block'
+                formControlName='username'
+                type='text'
+                placeholder='Email ou número de telefone...'
+                >
+            
+                <div class="input">
+                    <input
+                        class='txt-input center block'
+                        formControlName='password'
+                        [type]="show ? 'text' : 'password'"
+                        placeholder='Insira sua senha...'
+                        minlength="8"
+                        >
+                    <div class='showOrHide'>
+                        <img class='showButton'src="../../../../assets/showorhidden.svg" (click)="tooglePasswordVisibility()">
+                    </div>
+                </div>
+            
+                <div class='details'>
+                    <div class="switch">
+                        <label for='remember'>
+                            <input
+                            formControlName='remember'
+                            id='remember'
+                            type='checkbox'
+                            >
+                            <div class='slider round'></div>
+                        </label>
+                    </div>
+                    <label class="secondary remember" for='remember'>Lembrar de mim</label>
+                    <a class='cl-primary a-btn secondary' (click)='redirectToRecovery()'>Esqueceu sua senha?</a>
+                </div>
+            
+                <button class='btn-cl-primary center block' type='submit' (click)='efetuarLogin()'><span class='btn-title'>Entrar</span></button>
+            </form>
+            <p class='a-btn create'>Não tem uma conta? <a class='cl-primary' (click)='redirectToSingup()'>Criar conta</a></p>
+        </div>
+    </div>
+    <div class='bg bg-cl-primary right'>
+        <img class='center-image' src='../../../assets/bg-img.svg'>
+    </div>
+</div>

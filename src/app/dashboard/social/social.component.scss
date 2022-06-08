@@ -1,0 +1,23 @@
+@import '../../../themes/variables-light.scss';
+@import '../../../styles.scss';
+
+.title{
+  margin: 20px 0px 0px 20px;
+}
+
+.links{
+  display: flex;
+  flex-wrap: row wrap;
+  &>div{
+    margin: 15px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    &>img{
+      border-radius: 100px;
+      max-width: 50px;
+      max-height: 50px;
+      margin-right: 5px;
+    }
+  }
+}

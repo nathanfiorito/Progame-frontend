@@ -1,0 +1,46 @@
+.title{
+  margin: 20px 0px 0px 20px;
+}
+
+.graph-and-text-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+
+  svg {
+    margin-left: -1rem;
+  }
+
+  .points-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .points {
+      font-weight: 500;
+      font-size: 24px;
+      text-align: center;
+      color: #83838F;
+    }
+
+    .progress {
+      font-weight: 600;
+      font-size: 40px;
+      text-align: center;
+      color: #191935;
+    }
+  }
+
+}
+
+.phrase-text {
+  font-weight: 600;
+  font-size: 20px;
+  text-align: center;
+  color: #83838F;
+  padding-bottom: 2rem;
+}

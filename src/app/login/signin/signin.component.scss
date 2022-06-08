@@ -1,0 +1,166 @@
+@import '../../../themes/variables-light.scss';
+@import '../../../styles.scss';
+
+a:hover{
+    cursor: pointer;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+h1{
+    margin-bottom: 6vh;
+}
+
+.txt-input {
+    margin: 0px;
+    margin-bottom: 40px;
+    outline: none;
+}
+.input{
+    width: 300px;
+    position: relative;
+}
+
+.showOrHide{
+    position: absolute;
+    top: 0;
+    border-radius: 5px;
+    right: 0px;
+    z-index: 2;
+    border: none;
+    top: 2px;
+    height: 30px;
+    cursor: pointer;
+    color: white;
+    transform: translate(30px, 13px);
+}
+
+.details {
+    display: flex;
+    justify-content: space-between;
+}
+
+.secondary {
+    font-weight:500;
+}
+
+.btn-title {
+    font-weight: normal;
+}
+
+.grid {
+    display: grid;
+    grid-template: 'login bg bg';
+}
+
+.login {
+    grid-area: login;
+    height: 100vh;
+}
+
+.bg {
+    background-color: $cl-primary;
+    grid-area: bg;
+    height: 100vh;
+}
+
+.logo {
+    max-width: 240px;
+    margin: 5vh 0vh;
+}
+
+
+.secondary{
+    margin-top: 1.5px;
+}
+
+.form {
+    max-width: 343px;
+
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    text-align: center;
+}
+
+.form > input{
+    margin: 1.5vh 0;
+}
+
+.form > button{
+    margin-top: 1.5vh;
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.create{
+    position: fixed;
+    bottom: 5vh;
+    color: black;
+}
+
+.center-image {
+    margin: auto;
+    margin-top: 25vh;
+    display: block;
+}
+
+.remember {
+    margin-left: -80px;
+}
+
+.switch {
+    display: inline-block;
+    height: 20px;
+    width: 40px;
+    position: relative;
+  }
+  
+  .switch input {
+    display:none;
+  }
+  
+  .slider {
+    background-color: $cl-grey;
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    background-color: #fff;
+    content: "";
+    bottom: 2px;
+    left: 1px;
+    position: absolute;
+    transition: .4s;
+    height: 17px;
+    width: 20px;
+  }
+  
+  input:checked + .slider {
+    background-color: $cl-primary;
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(21px);
+  }
+  
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+  }

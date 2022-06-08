@@ -1,0 +1,25 @@
+<div class="grid">
+    <div class='login'>
+        <div class="form center">
+            <a (click)='redirectToHome()'><img class='logo' src='../../../assets/logo.svg'></a>
+            <form class='form' [formGroup]="formRecovery" novalidate>
+                <div class='header'>
+                    <p class='fsize-28 fweight-bolder mb-16'>Esqueceu sua senha ?</p>
+                    <p class='fsize-16 fweight-500 opacity-66'>Preencha o campo abaixo, enviaremos um código para criar uma senha nova</p>
+                </div>
+                <input
+                class='txt-input center block'
+                formControlName='email'
+                type='text'
+                placeholder='Email ou número de telefone...'
+                minlength="8"
+                >
+
+                <button class='btn-cl-primary center block mt-8' (click)='passwordReset()'><span class='btn-title'>Recuperar senha</span></button>
+            </form>
+        </div>
+    </div>
+    <div class='bg bg-cl-primary right'>
+        <img class='center-image' src='../../../assets/bg-img.svg'>
+    </div>
+</div>
