@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
   }
 
   redirectToSignin(){
-    this.router.navigate(['sigin']);
+    this.router.navigate(['signin']);
   }
 
   redirectToSignup(){

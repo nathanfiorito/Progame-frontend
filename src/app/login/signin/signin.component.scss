@@ -13,15 +13,19 @@ h1{
     margin-bottom: 6vh;
 }
 
-.txt-input {
+.txt{
+    &-input {
     margin: 0px;
-    margin-bottom: 40px;
     outline: none;
+    }
 }
 .input{
     width: 300px;
     position: relative;
+    margin-bottom: 40px;
 }
+
+
 
 .showOrHide{
     position: absolute;

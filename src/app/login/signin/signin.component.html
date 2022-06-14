@@ -4,13 +4,15 @@
             <a (click)='redirectToHome()'><img class='logo' src='../../../assets/logo.svg'></a>
             <form class='form' [formGroup]="formLogin" novalidate>
             <h1 class=''>Entre em sua conta</h1>
-                <input
-                class='txt-input center block'
-                formControlName='username'
-                type='text'
-                placeholder='Email ou número de telefone...'
-                >
-            
+                <div class="input">
+                    <input 
+                        type="text" 
+                        class="txt-input center block"
+                        formControlName='username'
+                        placeholder="Username ou número de telefone...">
+                </div>
+
+
                 <div class="input">
                     <input
                         class='txt-input center block'
@@ -40,6 +42,9 @@
                 </div>
             
                 <button class='btn-cl-primary center block' type='submit' (click)='efetuarLogin()'><span class='btn-title'>Entrar</span></button>
+
+                <app-error-popup [errors]="this.errors"></app-error-popup>
+                
             </form>
             <p class='a-btn create'>Não tem uma conta? <a class='cl-primary' (click)='redirectToSingup()'>Criar conta</a></p>
         </div>

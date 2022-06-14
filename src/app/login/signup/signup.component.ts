@@ -1,7 +1,10 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthService } from 'src/app/shared/auth.service';
+import { AuthService } from 'src/app/shared/services/auth/auth.service';
+import { SignUpDTO } from 'src/app/shared/dto/auth/signup.dto';
+import Utils from 'src/app/shared/utils';
 
 @Component({
   selector: 'app-signup',
@@ -9,12 +12,14 @@ import { AuthService } from 'src/app/shared/auth.service';
   styleUrls: ['./signup.component.scss']
 })
 export class SignupComponent implements OnInit {
-
-  formLogin = this.formBuilder.group({
+  formRegister = this.formBuilder.group({
     email: ['', [Validators.required, Validators.email]],
-    password: ['', [Validators.required, Validators.minLength(8)]],
-  })
+    username: ['', [Validators.required, Validators.minLength(4)]],
+    password: ['', [Validators.required, Validators.minLength(8), Validators.pattern('((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$')]],
+    passwordConfirm: ['', [Validators.required, Validators.minLength(8), Validators.pattern('((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$')]],
+})
 
+  errors: string[] = [];
   show: boolean = false;
 
   constructor(
@@ -23,23 +28,30 @@ export class SignupComponent implements OnInit {
     private authService: AuthService
     ) { }
 
-  ngOnInit(): void {
-
-
-  }
+  ngOnInit(): void { }
 
   tooglePasswordVisibility(){
     this.show = !this.show;
   }
 
 
-  efetuarCadastro(){
-    const {email, password} = this.formLogin.value;
+  async register(){
+    const {email, username, password, passwordConfirm} = this.formRegister.value;
+    const signUpDTO: SignUpDTO = {email: email,username: username, password: password, passwordConfirm: passwordConfirm}
+
+    this.errors = [];
+
+    await this.authService.signup(signUpDTO).then((success) => {
+      this.redirectToSignin();
+    }).catch((response: HttpErrorResponse) => {
+      this.errors = Utils.showErrors(response);
+    });
   }
 
-  redirecionaPaginaCadastro(){
-    this.router.navigate(['/signup'])
+  redirectToSignin(){
+    this.router.navigate(['/signin'])
   }
+
   redirectToHome(){
     this.router.navigate(['/home'])
   }

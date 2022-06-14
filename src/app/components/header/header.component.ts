@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
+import jwt_decode from 'jwt-decode';
+import { Token } from 'src/app/shared/entity/token.entity';
 
 @Component({
   selector: 'app-header',
@@ -7,19 +10,50 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  nivel: number;
-  barPercentage: string;
-  page: string;
+  token!: Token;
+  level!: number;
+  experience!: number;
+  barPercentage!: string;
+  page!: string;
 
-  constructor(private router: Router) {
-    this.nivel = 5;
-    this.page = '';
-    this.barPercentage = '0';
+  constructor(
+    private router: Router,
+    private cookieService: CookieService
+    ) {
+    
   }
 
   ngOnInit(): void {
+    this.getUserInfo();
     this.page = this.router.url.includes('ranking') ? 'ranking' : 'dashboard';
-    this.barPercentage = '80';
     (<HTMLElement>document.getElementsByClassName('progress-inner')[0]).innerText = '';
+  }
+
+
+  getUserInfo(){
+    this.token = this.getDecodedAccessToken(this.cookieService.get('accessToken'));
+    this.calculateUserExp(this.token.experience);
+    this.barPercentage = '0';
+  }
+
+  calculateUserExp(exp: number){
+    this.experience = exp % 100;
+    this.level = Math.round(exp / 100);
+  }
+
+  getDecodedAccessToken(token: string): any {
+    try {
+      return jwt_decode(token);
+    } catch(error) {
+      return null;
+    }
+  }
+
+  redirectToDashboard(){
+    this.router.navigate(['dashboard'])
+  }
+
+  redirectToRanking(){
+    this.router.navigate(['ranking'])
   }
 }

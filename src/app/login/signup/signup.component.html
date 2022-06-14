@@ -2,14 +2,24 @@
     <div class='login'>
         <div class="form center">
             <a (click)='redirectToHome()'><img class='logo' src='../../../assets/logo.svg'></a>
-            <form class='form' [formGroup]="formLogin" novalidate>
-            <h1 class=''>Entre em sua conta</h1>
-                <input
-                class='txt-input center block'
-                formControlName='email'
-                type='text'
-                placeholder='Email ou número de telefone...'
-                >
+            <form class='form' [formGroup]="formRegister" novalidate>
+                <h1 class=''>Entre em sua conta</h1>
+
+                <div class="input">
+                    <input 
+                        type="text" 
+                        class="txt-input center block"
+                        formControlName='username'
+                        placeholder="Digite seu username">
+                </div>
+
+                <div class="input">
+                    <input 
+                    class='txt-input center block'
+                    formControlName='email'
+                    type='text'
+                    placeholder='Digite seu e-mail'>
+                </div>
             
                 <div class="input">
                     <input
@@ -23,8 +33,23 @@
                         <img class='showButton'src="../../../../assets/showorhidden.svg" (click)="tooglePasswordVisibility()">
                     </div>
                 </div>
+
+                <div class="input">
+                    <input
+                    class='txt-input center block'
+                    formControlName='passwordConfirm'
+                    [type]="show ? 'text' : 'password'"
+                    placeholder='Digite sua senha'
+                    minlength="8"
+                    >
+                    <div class='showOrHide'>
+                        <img class='showButton'src="../../../../assets/showorhidden.svg" (click)="tooglePasswordVisibility()">
+                    </div>
+                </div>
             
-                <button class='btn-cl-primary center block' type='submit' (click)='efetuarCadastro()'><span class='btn-title'>Entrar</span></button>
+                <button class='btn-cl-primary center block' type='submit' (click)='register()'><span class='btn-title'>Entrar</span></button>
+
+                <app-error-popup [errors]="this.errors"></app-error-popup>
             </form>
         </div>
     </div>

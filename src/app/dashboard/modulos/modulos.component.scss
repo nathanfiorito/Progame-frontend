@@ -1,7 +1,7 @@
+@import '../../../styles.scss';
 main {
   padding: 1.5rem;
 }
-
 .title-n-tasks {
   display: flex;
   align-items: center;
@@ -13,4 +13,28 @@ main {
     text-align: center;
     color: #83838F;
   }
+}
+
+.module{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 20px;
+  margin: 20px 0px;
+  position: relative;
+
+  div{
+    flex: 1 1 350px;
+
+    img{
+      max-width: 200px;
+    }
+
+    button{
+      position: absolute;
+      margin-bottom: 0px;
+    }
+  }
+
+
 }

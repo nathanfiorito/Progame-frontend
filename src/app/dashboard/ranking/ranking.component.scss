@@ -1,0 +1,12 @@
+@import '../../../styles.scss';
+@import '../../../themes/variables-light.scss';
+
+.containter{
+    display: flex!important;
+    flex-direction: row;
+    background-color: #ededed;
+
+    div{
+        flex: 1 1 200px;
+    }
+}

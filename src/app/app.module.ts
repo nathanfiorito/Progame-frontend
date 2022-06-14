@@ -3,8 +3,10 @@ import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { ProgressBarModule } from 'angular-progress-bar';
+import { CookieService } from 'ngx-cookie-service';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ErrorPopupComponent } from './components/error-popup/error-popup.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { DailyComponent } from './dashboard/daily/daily.component';
@@ -18,6 +20,7 @@ import { PasswordRecoveryComponent } from './login/password-recovery/password-re
 import { RecoveryComponent } from './login/password-recovery/recovery/recovery.component';
 import { SigninComponent } from './login/signin/signin.component';
 import { SignupComponent } from './login/signup/signup.component';
+import { RankingComponent } from './dashboard/ranking/ranking.component';
 
 @NgModule({
   declarations: [
@@ -35,15 +38,17 @@ import { SignupComponent } from './login/signup/signup.component';
     ModulosComponent,
     SocialComponent,
     DailyComponent,
+    ErrorPopupComponent,
+    RankingComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     ProgressBarModule,
-    HttpClientModule
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
 })

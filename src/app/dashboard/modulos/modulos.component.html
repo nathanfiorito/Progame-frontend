@@ -3,4 +3,14 @@
     <h1 class='title fsize-32'>Estudar</h1>
     <p class="tasks">4 tarefas</p>
   </div>
+  <ul *ngFor="let module of this.modules">
+    <li class="module">
+      <img src="{{module.image}}">
+      <div>
+        <h3>{{module.title}}</h3>
+        <h5>{{module.resume}}</h5>
+        <button class='btn-cl-green center block' type='submit'><span class='btn-title'>Comecar</span></button>
+      </div>
+    </li>
+  </ul>
 </main>

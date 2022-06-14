@@ -123,6 +123,12 @@ input:focus-visible {
     }
 }
 
+.mh{
+    &-2{
+        margin: 0px 0px;
+    }
+}
+
 
 .mt{
     &-8{
@@ -214,6 +220,18 @@ input:focus-visible {
 
         transition: 1s;
     }
+
+    &-cl-green {
+        color: $white;
+        background-color: $cl-green;
+        border: 2px solid $cl-green;
+        border-radius: 6px;
+
+        width: 343px;
+        height: 48px;
+
+        transition: 1s;
+    }
 }
 
 .a{
@@ -242,9 +260,18 @@ input:focus-visible {
     }
 }
 
-.block{
-    display: block;
+.display{
+    &-block{
+        display: block;
+    }
+    &-inline{
+        display: inline;
+    }
+    &-inlineblock{
+        display: inline-block;
+    }
 }
+
 
 .bg-cl-primary{
     color:$cl-primary;
