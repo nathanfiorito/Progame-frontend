@@ -2,8 +2,8 @@ import { SignInDTO } from '../../dto/auth/signin.dto'
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
 import { SignUpDTO } from '../../dto/auth/signup.dto';
+import {environment} from '../../../../environments/environment'
 
 @Injectable({
   providedIn: 'root'
@@ -27,7 +27,7 @@ export class AuthService {
       }
 
       let body = JSON.stringify(signinDTO);
-      let response = await this.http.post('http://localhost:3000/auth/signin', body, httpOptions).toPromise();
+      let response = await this.http.post(`${environment.apiURL}/auth/signin`, body, httpOptions).toPromise();
       return response;
     }
 
@@ -42,7 +42,7 @@ export class AuthService {
       }
 
       let body = JSON.stringify(signupDTO);
-      let response = await this.http.post('http://localhost:3000/auth/signup', body, httpOptions).toPromise();
+      let response = await this.http.post(`${environment.apiURL}/auth/signup`, body, httpOptions).toPromise();
       return response;
     }
 }

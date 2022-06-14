@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { SignUpDTO } from '../../dto/auth/signup.dto';
+import {environment} from '../../../../environments/environment'
 import { CookieService } from 'ngx-cookie-service';
 
 @Injectable({
@@ -30,22 +30,7 @@ export class ModuleService {
         })
       }
 
-      let response = await this.http.get('http://localhost:3000/module/list', httpOptions).toPromise();
-      return response;
-    }
-
-    async signup(signupDTO: SignUpDTO): Promise<any>{
-      const httpOptions = {
-        headers: new HttpHeaders({
-          'content-type': 'application/json',
-          'observe':'body',
-          'responseType': 'json',
-          'Access-Control-Allow-Origin': '*'
-        })
-      }
-
-      let body = JSON.stringify(signupDTO);
-      let response = await this.http.post('http://localhost:3000/auth/signup', body, httpOptions).toPromise();
+      let response = await this.http.get(`${environment.apiURL}/module/list`, httpOptions).toPromise();
       return response;
     }
 }
