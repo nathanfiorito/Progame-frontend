@@ -1,0 +1,77 @@
+@import '../../../../themes/variables-light.scss';
+
+:host{
+    padding: 0.75rem 2rem;
+    box-sizing: border-box;
+    border-radius: 0.5rem;
+    font-size: 1.125rem;
+    font-weight: 800;
+    margin: 0.5rem;
+    
+    &.btn{
+        &-primary {
+            color: $white;      
+            background-color: $primary;
+            transition: 0.5s;
+            &:hover {
+                background-color: $primary-dark;
+            }
+            &:disabled {
+                color: $grey-6;
+                background-color: $grey-1;
+            }
+        }
+    
+        &-secondary {
+            color: $primary-dark;
+            background-color: $primary-light;
+            transition: 0.5s;
+            &:hover {
+                color: $grey-0;
+                background-color: $primary;
+            }
+            &:disabled {
+                color: $grey-6;
+                background-color: $grey-1;
+            }
+        }
+    
+        &-success {
+            color: $white;
+            background-color: $success;
+        }
+    
+        &-warning {
+            color: $white;
+            background-color: $warning;
+        }
+    
+        &-danger {
+            color: $white;
+            background-color: $danger;
+        }
+    }
+
+    &.size{
+        &-large {
+            width: 8rem;
+            height: 3rem;
+            font-size: 1.125rem;
+        }
+        &-medium {
+            width: 7rem;
+            height: 2.5rem;
+            font-size: 1rem;
+        }
+        &-small {
+            width: 6rem;
+            height: 2rem;
+            font-size: 0.875rem;
+        }
+        &-xsmall {
+            width: 5rem;
+            height: 1.5rem;
+            font-size: 0.875rem;
+        }
+    }
+}

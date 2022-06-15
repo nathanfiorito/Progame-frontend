@@ -5,7 +5,7 @@ import jwt_decode from 'jwt-decode';
 import { Token } from 'src/app/shared/entity/token.entity';
 
 @Component({
-  selector: 'app-header',
+  selector: 'header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })

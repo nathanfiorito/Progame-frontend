@@ -23,11 +23,11 @@ nav {
   border-bottom: 0.15rem solid transparent;
   font-size: 18px;
   font-weight: 700;
-  color: $cl-grey;
+  color: $grey-2;
 
   &.active {
-    color: $cl-primary;
-    border-bottom: 0.15rem solid $cl-primary;
+    color: $primary;
+    border-bottom: 0.15rem solid $primary;
   }
 }
 

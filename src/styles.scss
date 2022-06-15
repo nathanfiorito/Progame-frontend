@@ -1,21 +1,56 @@
-/* You can add global styles to this file, and also import other style files */
+@import './reset.scss';
 @import './themes/variables-light.scss';
-*{
-    font-family: $inter;
+
+* {
+    font-family: $poppins;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
-     box-sizing: border-box;
-     margin: 0%;
-     padding: 0%;
-     border: 0;
+    box-sizing: border-box;
+    color: black;
 }
 
-html, body {
-    height: 100%;
-  }
+h1, 
+h2, 
+h3 {
+    font-weight: bold;
+}
 
-ul, ol, li {
-    list-style: none;
+h4, 
+h5,
+h6 {
+    font-weight: 600;
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+h2 {
+    font-size: 3rem
+}
+
+h3 {
+    font-size: 2.5rem
+}
+
+h4 {
+    font-size: 2rem;
+}
+
+h5 {
+    font-size: 1.5rem;
+}
+
+h6 {
+    font-size: 1.125rem;
+}
+
+p {
+    font-size: 0.875rem;
+}
+
+small {
+    font-size: 0.75rem
 }
 
 button, input {
@@ -28,12 +63,12 @@ button, input {
 
 input:hover{
     outline: none !important;
-    border: 1px solid $cl-primary;
+    border: 1px solid $primary;
 }
 
 input:focus-visible {
     outline: none !important;
-    border: 2px solid $cl-primary;
+    border: 2px solid $primary;
 }
 
 .center{
@@ -43,7 +78,7 @@ input:focus-visible {
 
 .title {
     font-family: $poppins;
-    font-size: $font-size-title;
+    font-size: $font-size;
     font-weight: bold;
     line-height: 50px;
 }
@@ -153,13 +188,13 @@ input:focus-visible {
 
 .cl{
     &-primary{
-        color: $cl-primary;
+        color: $primary;
     }
     &-secondary{
-        color: $cl-grey;
+        color: $secondary;
     }
     &-lightgrey{
-        color: &cl-lighblack;
+        color: $grey-1;
     }
 }
 
@@ -169,91 +204,92 @@ input:focus-visible {
     }
 }
 
-.btn{
-    &-title {
-        font-size: $font-size-sec-title;
-        font-weight: bold;
-    }
+// .btn{
+//     &-title {
+//         font-size: $font-size;
+//         font-weight: bold;
+//     }
 
-    &-cl-primary {
-        color: $white;
-        border-radius: 6px;
-        background-color: $cl-primary;
+//     &-cl-primary {
+//         color: $grey-0;
+//         border-radius: 6px;
+//         background-color: $primary;
 
-        width: 343px;
-        height: 48px;
+//         width: 343px;
+//         height: 48px;
 
-        margin: 8px;
-        transition: 1s;
-    }
+//         margin: 8px;
+//         transition: 1s;
+//     }
 
-    &-cl-primary:hover {
-        color: $white;
-        border-radius: 6px;
-        background-color: $cl-primarydarker;
+//     &-cl-primary:hover {
+//         color: $grey-0;
+//         border-radius: 6px;
+//         background-color: $primary-dark;
 
-        width: 343px;
-        height: 48px;
+//         width: 343px;
+//         height: 48px;
 
-        transition: 1s;
-    }
+//         transition: 1s;
+//     }
 
-    &-secondary {
-        color: $cl-primary;
-        border: 2px solid $cl-primary;
-        border-radius: 6px;
+//     &-secondary {
+//         color: $primary;
+//         border: 2px solid $primary;
+//         border-radius: 6px;
 
-        width: 343px;
-        height: 48px;
+//         width: 343px;
+//         height: 48px;
 
-        margin: 8px;
-        transition: 1s;
-    }
+//         margin: 8px;
+//         transition: 1s;
+//     }
 
-    &-secondary {
-        color: $cl-primary;
-        border: 2px solid $cl-primary;
-        border-radius: 6px;
+//     &-secondary {
+//         color: $primary;
+//         border: 2px solid $primary;
+//         border-radius: 6px;
 
-        width: 343px;
-        height: 48px;
+//         width: 343px;
+//         height: 48px;
 
-        transition: 1s;
-    }
+//         transition: 1s;
+//     }
 
-    &-cl-green {
-        color: $white;
-        background-color: $cl-green;
-        border: 2px solid $cl-green;
-        border-radius: 6px;
+//     &-cl-green {
+//         color: $grey-0;
+//         background-color: $success;
+//         border: 2px solid $success;
+//         border-radius: 6px;
 
-        width: 343px;
-        height: 48px;
+//         width: 343px;
+//         height: 48px;
 
-        transition: 1s;
-    }
-}
+//         transition: 1s;
+//     }
+// }
 
-.a{
-    &-btn{
-        color: $cl-primary;
-        transition: 1s;
-    }
+// .a{
+//     &-btn{
+//         color: $primary;
+//         transition: 1s;
+//     }
 
-    &-btn:hover{
-        color: $cl-primarydarker;
-        transition: 1s;
-        text-decoration: underline;
-    }
-}
+//     &-btn:hover{
+//         color: $primary-dark;
+//         transition: 1s;
+//         text-decoration: underline;
+//     }
+// }
+
 .txt-input {
-    background-color: $cl-grey;
+    background-color: $grey-2;
     border-radius: 6px;
     padding: 10px;
     width: 343px;
     height: 48px;
     &::placeholder{
-        font-size: $font-size-sec-title;
+        font-size: $font-size;
     }
     &:focus{
         padding: 10px;
@@ -274,5 +310,5 @@ input:focus-visible {
 
 
 .bg-cl-primary{
-    color:$cl-primary;
+    color:$primary;
 }

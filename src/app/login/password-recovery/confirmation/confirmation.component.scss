@@ -30,10 +30,6 @@ input[type=text]{
     margin-bottom: 6vh;
 }
 
-.btn-title {
-    font-weight: normal;
-}
-
 .grid {
     display: grid;
     grid-template: 'recovery bg bg';
@@ -45,7 +41,7 @@ input[type=text]{
 }
 
 .bg {
-    background-color: $cl-primary;
+    background-color: $primary;
     grid-area: bg;
     height: 100vh;
 }

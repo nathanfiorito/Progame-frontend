@@ -50,9 +50,6 @@ h1{
     font-weight:500;
 }
 
-.btn-title {
-    font-weight: normal;
-}
 
 .grid {
     display: grid;
@@ -65,7 +62,7 @@ h1{
 }
 
 .bg {
-    background-color: $cl-primary;
+    background-color: $primary;
     grid-area: bg;
     height: 100vh;
 }
@@ -130,7 +127,7 @@ h1{
   }
   
   .slider {
-    background-color: $cl-grey;
+    background-color: $grey-2;
     bottom: 0;
     cursor: pointer;
     left: 0;
@@ -152,7 +149,7 @@ h1{
   }
   
   input:checked + .slider {
-    background-color: $cl-primary;
+    background-color: $primary;
   }
   
   input:checked + .slider:before {

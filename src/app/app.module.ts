@@ -21,6 +21,8 @@ import { RecoveryComponent } from './login/password-recovery/recovery/recovery.c
 import { SigninComponent } from './login/signin/signin.component';
 import { SignupComponent } from './login/signup/signup.component';
 import { RankingComponent } from './dashboard/ranking/ranking.component';
+import { InputComponent } from './components/inputs/input/input.component';
+import { ButtonComponent } from './components/buttons/button/button.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,9 @@ import { RankingComponent } from './dashboard/ranking/ranking.component';
     SocialComponent,
     DailyComponent,
     ErrorPopupComponent,
-    RankingComponent
+    RankingComponent,
+    InputComponent,
+    ButtonComponent
   ],
   imports: [
     BrowserModule,
