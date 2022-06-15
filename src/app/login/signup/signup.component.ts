@@ -37,7 +37,7 @@ export class SignupComponent implements OnInit {
 
   async register(){
     const {email, username, password, passwordConfirm} = this.formRegister.value;
-    const signUpDTO: SignUpDTO = {email: email,username: username, password: password, passwordConfirm: passwordConfirm}
+    const signUpDTO: SignUpDTO = {email: email!,username: username!, password: password!, passwordConfirm: passwordConfirm!}
 
     this.errors = [];
 

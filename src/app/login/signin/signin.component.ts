@@ -37,7 +37,7 @@ export class SigninComponent implements OnInit {
 
   async efetuarLogin(){
     const {username, password} = this.formLogin.value;
-    const signinDTO: SignInDTO = {username: username, password: password}
+    const signinDTO: SignInDTO = {username: username!, password: password!}
     
     this.errors = [];
 
