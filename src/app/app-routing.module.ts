@@ -1,5 +1,6 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { TextInputComponent } from './components/inputs/text-input/text-input.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { RankingComponent } from './dashboard/ranking/ranking.component';
 import { AuthGuard } from './guards/auth.guard';
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'signin', component: SigninComponent, pathMatch: 'full'},
   { path: 'signup', component: SignupComponent, pathMatch: 'full' },
   { path: 'recovery', component: PasswordRecoveryComponent, pathMatch: 'full'},
+  { path: 'teste', component: TextInputComponent, pathMatch: 'full'},
   { path: 'dashboard', component: DashboardComponent, pathMatch: 'full',canActivate: [AuthGuard] },
   { path: 'ranking', component: RankingComponent, pathMatch: 'full',canActivate: [AuthGuard] },
 ];

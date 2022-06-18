@@ -1,9 +1,7 @@
 <div class='main'>
-    <h1>Boas vindas ao <span class='cl-primary'>Progame!</span></h1>
-    <div class=''>
-        <button app-button color="primary" size="large">Entrar</button>
-    </div>
-    <div class=''>
-        <button app-button color="secondary" size="large">Criar conta</button>
+    <h2>Boas vindas ao <span class='cl-primary'>Progame!</span></h2>
+    <div>
+        <button app-button color="primary" size="large" (click)="redirectToSignin()">Entrar</button>
+        <button app-button color="secondary" size="large" (click)="redirectToSignup()">Criar conta</button>
     </div>
 </div>

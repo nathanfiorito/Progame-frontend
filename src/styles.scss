@@ -53,29 +53,6 @@ small {
     font-size: 0.75rem
 }
 
-button, input {
-    background: none;
-	color: inherit;
-	border: none;
-	padding: 0;
-	cursor: pointer;
-}
-
-input:hover{
-    outline: none !important;
-    border: 1px solid $primary;
-}
-
-input:focus-visible {
-    outline: none !important;
-    border: 2px solid $primary;
-}
-
-.center{
-  align-items: center;
-  justify-content: center;
-}
-
 .title {
     font-family: $poppins;
     font-size: $font-size;
@@ -203,84 +180,6 @@ input:focus-visible {
         opacity: 66%;
     }
 }
-
-// .btn{
-//     &-title {
-//         font-size: $font-size;
-//         font-weight: bold;
-//     }
-
-//     &-cl-primary {
-//         color: $grey-0;
-//         border-radius: 6px;
-//         background-color: $primary;
-
-//         width: 343px;
-//         height: 48px;
-
-//         margin: 8px;
-//         transition: 1s;
-//     }
-
-//     &-cl-primary:hover {
-//         color: $grey-0;
-//         border-radius: 6px;
-//         background-color: $primary-dark;
-
-//         width: 343px;
-//         height: 48px;
-
-//         transition: 1s;
-//     }
-
-//     &-secondary {
-//         color: $primary;
-//         border: 2px solid $primary;
-//         border-radius: 6px;
-
-//         width: 343px;
-//         height: 48px;
-
-//         margin: 8px;
-//         transition: 1s;
-//     }
-
-//     &-secondary {
-//         color: $primary;
-//         border: 2px solid $primary;
-//         border-radius: 6px;
-
-//         width: 343px;
-//         height: 48px;
-
-//         transition: 1s;
-//     }
-
-//     &-cl-green {
-//         color: $grey-0;
-//         background-color: $success;
-//         border: 2px solid $success;
-//         border-radius: 6px;
-
-//         width: 343px;
-//         height: 48px;
-
-//         transition: 1s;
-//     }
-// }
-
-// .a{
-//     &-btn{
-//         color: $primary;
-//         transition: 1s;
-//     }
-
-//     &-btn:hover{
-//         color: $primary-dark;
-//         transition: 1s;
-//         text-decoration: underline;
-//     }
-// }
 
 .txt-input {
     background-color: $grey-2;

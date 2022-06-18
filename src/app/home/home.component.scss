@@ -1,17 +1,23 @@
 @import '../../themes/variables-light.scss';
 @import '../../styles.scss';
 
-.main {
-    max-width: 343px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-}
+:host {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    height: 100%;
 
-.title{
-    margin: 0px 18px 0px 18px;
-    text-align: center;
-    margin-bottom: 56px;
+    .main {
+        text-align: center;
+        max-width: 327px;
+        line-height: 3.625rem;
+    }
+
+    div {
+        margin-top: 4rem;
+        &> button {
+            display: block;
+            width: 19.5rem;
+        }
+    }
 }

@@ -1,0 +1,43 @@
+@import '../../../../themes/variables-light.scss';
+
+:host {
+    background-color: $grey-1!important;
+    border-radius: 0.5rem;
+    box-sizing: border-box;
+    line-height: 1.125rem;
+    font-size: 1rem;
+    padding: 1rem!important;
+
+    &.ng-invalid {
+        background-color: $danger-light;
+    }
+    
+    &:hover{
+        border: 1px solid $primary;
+        margin: -1px;
+    }
+    
+    &:focus{
+        outline: none;
+        border: 2px solid $primary;
+        margin: -2px;
+    }
+    
+    &::placeholder{
+        color: $grey-7;
+    }
+}
+
+.showOrHide{
+    position: absolute;
+    top: 0;
+    border-radius: 5px;
+    right: 0px;
+    z-index: 2;
+    border: none;
+    top: 2px;
+    height: 30px;
+    cursor: pointer;
+    color: white;
+    transform: translate(30px, 13px);
+}
