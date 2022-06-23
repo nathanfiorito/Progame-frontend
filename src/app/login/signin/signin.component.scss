@@ -1,28 +1,46 @@
 @import '../../../themes/variables-light.scss';
 @import '../../../styles.scss';
 
-.wrapper {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    &.wrapper .left,
-    &.wrapper .right {
-        width: 50%;
-        height: 100vh;
-    }
+button, input {
+    justify-content: space-around;
+    display: block;
+    width: 312px;
+}
 
-    &.wrapper .right {
-        background-color: $primary;
-    }
+input {
+    margin: 1rem 0;
+}
+
+button {
+    margin: 2.5rem 0;
 }
 
 .center {
     height: 100vh;
+    width: 312px;
     margin: auto;
+    
     &-image {
         width: 40vw;
         margin: auto;
         margin-top: 25vh;
         display: block;
     }
+}
+
+.logo {
+    margin-top: 1.3rem;
+    margin-bottom: 13.5rem;
+}
+
+.title {
+    margin-bottom: 4rem;
+}
+
+.a-btn {
+    margin-top: 17rem;
+}
+
+.create:hover {
+    cursor: pointer;
 }

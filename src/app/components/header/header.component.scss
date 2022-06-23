@@ -2,9 +2,11 @@
 @import '../../../styles.scss';
 
 nav {
+  z-index: 98;
   display: flex;
   align-items: center;
   justify-content: space-around;
+  background-color: white;
 }
 
 .page-links {

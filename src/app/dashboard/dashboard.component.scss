@@ -1,77 +1,22 @@
 @import '../../themes/variables-light.scss';
 @import '../../styles.scss';
 
-.containter {
-    display: grid;
-    height: 100vh;
-    grid-template-columns: 72px 72px 72px 72px 72px 72px 72px 72px 72px 72px 72px 72px;
+.bg {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-color: #F5F5F5;
+  z-index: -1;
+  top: 0;
 }
 
-.nav{
-    grid-area: nav;
-    background-color: $grey-0;
+.modulos {
+  margin-top: 4rem;;
+  grid-column: 1/7;
 }
 
-.main{
-    height: 100vh;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: .2fr 1.5fr 1fr;
-    grid-template-areas: "nav nav nav"
-                        "modulos modulos daily"
-                        "modulos modulos social";
-    background-color: #ededed;
-
-    &.ranking {
-      display: flex;
-      flex-direction: column;
-    }
-}
-
-.card{
-  margin: 30px 30px 12px 30px;
-  background-color: $grey-0;
-  border-radius: 12px;
-}
-
-.card + .card{
-  margin-left: 0px;
-  margin-bottom: 15px;
-}
-
-.modulos{
-    grid-area: modulos;
-}
-
-.others {
-    grid-area: daily;
-}
-
-.social{
-  grid-area: social;
-}
-
-.participant-name {
-  font-weight: 600;
-  font-size: 24px;
-  text-align: center;
-  color: #000000;
-}
-
-.participant-pic {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  background-color: #ededed;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  margin-bottom: 2rem;
-}
-
-.participant-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+.social {
+  margin-top: 4rem;
+  grid-column: 7/12;
+  background-color: white;
 }

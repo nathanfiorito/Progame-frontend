@@ -1,18 +1,35 @@
 @import '../../../styles.scss';
 main {
   padding: 1.5rem;
+  border-radius: 12px;
+  background-color: white;
 }
-.title-n-tasks {
+
+.title{
   display: flex;
   align-items: center;
   justify-content: space-between;
-
+  margin-top: 3.5rem;
+  margin-left: 2rem;
   p {
     font-weight: 500;
     font-size: 20px;
     text-align: center;
     color: #83838F;
+    display: block;
   }
+
+  u{
+  }
+}
+
+.tasks{
+
+}
+
+.modules {
+  margin-top: 4rem;
+  margin-left: 2rem;
 }
 
 .module{

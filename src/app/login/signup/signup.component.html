@@ -1,59 +1,17 @@
+<app-background></app-background>
 <div class="grid">
-    <div class='login'>
-        <div class="form center">
-            <a (click)='redirectToHome()'><img class='logo' src='../../../assets/logo.svg'></a>
+    <div class="center">
+        <a (click)='redirectToHome()'><img class='logo' src='../../../assets/logo.svg'></a>
+        <div>
+            <h4 class='title'>Crie sua conta</h4>
             <form class='form' [formGroup]="formRegister" novalidate>
-                <h1 class=''>Entre em sua conta</h1>
-
-                <div class="input">
-                    <input 
-                        type="text" 
-                        class="txt-input center block"
-                        formControlName='username'
-                        placeholder="Digite seu username">
-                </div>
-
-                <div class="input">
-                    <input 
-                    class='txt-input center block'
-                    formControlName='email'
-                    type='text'
-                    placeholder='Digite seu e-mail'>
-                </div>
-            
-                <div class="input">
-                    <input
-                    class='txt-input center block'
-                    formControlName='password'
-                    [type]="show ? 'text' : 'password'"
-                    placeholder='Digite sua senha'
-                    minlength="8"
-                    >
-                    <div class='showOrHide'>
-                        <img class='showButton'src="../../../../assets/showorhidden.svg" (click)="tooglePasswordVisibility()">
-                    </div>
-                </div>
-
-                <div class="input">
-                    <input
-                    class='txt-input center block'
-                    formControlName='passwordConfirm'
-                    [type]="show ? 'text' : 'password'"
-                    placeholder='Digite sua senha'
-                    minlength="8"
-                    >
-                    <div class='showOrHide'>
-                        <img class='showButton'src="../../../../assets/showorhidden.svg" (click)="tooglePasswordVisibility()">
-                    </div>
-                </div>
-            
-                <button class='btn-cl-primary center block' type='submit' (click)='register()'><span class='btn-title'>Entrar</span></button>
-
-                <app-error-popup [errors]="this.errors"></app-error-popup>
+                <input text-input type="text" placeholder="Username" formControlName='username'>
+                <input text-input type="email" placeholder="Email" formControlName='email'>
+                <input text-input type='password' placeholder="Insira sua senha" formControlName='password' minlength="8">
+                <input text-input type='password' placeholder="Insira sua senha" formControlName='passwordConfirm' minlength="8">
+                <button app-button (click)='register()'>Entrar</button>
+                <p class='a-btn '>Já tem uma conta? <a class='cl-primary create' (click)='redirectToSignin()'>Entrar</a></p>
             </form>
         </div>
-    </div>
-    <div class='bg bg-cl-primary right'>
-        <img class='center-image' src='../../../assets/bg-img.svg'>
     </div>
 </div>

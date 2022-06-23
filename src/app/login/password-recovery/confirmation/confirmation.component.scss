@@ -9,46 +9,20 @@ button:hover{
     cursor: pointer;
 }
 
-
 input[type=text]{
     width: 54px;
     height: 52px;
     display: inline;
+    padding: 1rem;
 }
 
 .inputs{
     justify-content: space-between;
-    padding: 0 10px;
 }
 
 .inputs > div{
     display: inline;
-    margin: 0 5px;
-}
-
-.header{
-    margin-bottom: 6vh;
-}
-
-.grid {
-    display: grid;
-    grid-template: 'recovery bg bg';
-}
-
-.login {
-    grid-area: recovery;
-    height: 100vh;
-}
-
-.bg {
-    background-color: $primary;
-    grid-area: bg;
-    height: 100vh;
-}
-
-.logo {
-    max-width: 240px;
-    margin: 5vh 0vh;
+    margin: 0 0.32rem;
 }
 
 .form {
@@ -60,21 +34,53 @@ input[type=text]{
     text-align: center;
 }
 
-.form > input{
-    margin: 1.5vh 0;
+@import '../../../../themes/variables-light.scss';
+@import '../../../../styles.scss';
+
+button, input {
+    justify-content: space-around;
+    display: block;
+    width: 312px;
 }
 
-.form > button{
-    margin-top: 4vh;
+input {
+    margin: 1rem 0;
+}
+
+button {
+    margin: 2.5rem 0;
 }
 
 .center {
-    margin-left: auto;
-    margin-right: auto;
+    height: 100vh;
+    width: 312px;
+    margin: auto;
+    
+    &-image {
+        width: 40vw;
+        margin: auto;
+        margin-top: 25vh;
+        display: block;
+    }
 }
 
-.center-image {
-    margin: auto;
-    margin-top: 25vh;
-    display: block;
+.logo {
+    margin-top: 1.3rem;
+    margin-bottom: 13.5rem;
+}
+
+.title {
+    margin-bottom: 0.5rem;
+}
+
+.subtitle{
+    margin-bottom: 2.5rem;
+}
+
+.a-btn {
+    margin-top: 10rem;
+}
+
+.create:hover {
+    cursor: pointer;
 }

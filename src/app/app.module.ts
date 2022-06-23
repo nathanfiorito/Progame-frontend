@@ -23,6 +23,8 @@ import { SignupComponent } from './login/signup/signup.component';
 import { RankingComponent } from './dashboard/ranking/ranking.component';
 import { TextInputComponent } from './components/inputs/text-input/text-input.component';
 import { ButtonComponent } from './components/buttons/button/button.component';
+import { BackgroundComponent } from './components/background/background.component';
+import { PasswordInputComponent } from './components/inputs/password-input/password-input.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +45,9 @@ import { ButtonComponent } from './components/buttons/button/button.component';
     ErrorPopupComponent,
     RankingComponent,
     ButtonComponent,
-    TextInputComponent
+    TextInputComponent,
+    PasswordInputComponent,
+    BackgroundComponent,
   ],
   imports: [
     BrowserModule,

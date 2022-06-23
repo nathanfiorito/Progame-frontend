@@ -1,9 +1,17 @@
 <main>
-  <div class="title-n-tasks">
-    <h1 class='title fsize-32'>Estudar</h1>
-    <p class="tasks">4 tarefas</p>
+  <div class="title">
+    <h4>Estudar</h4>
+    <p>4 tarefas</p>
   </div>
-  <ul *ngFor="let module of this.modules">
+  <div class="task">
+    <ul>
+      <li><button app-button class="primary">Lógica</button></li>
+      <li><button app-button class="primary">C# Básico</button></li>
+      <li><button app-button class="primary">POO</button></li>
+      <li><button app-button class="primary">Avançado</button></li>
+    </ul>
+  </div>
+  <ul class="modules" *ngFor="let module of this.modules">
     <li class="module">
       <img src="{{module.image}}">
       <div>

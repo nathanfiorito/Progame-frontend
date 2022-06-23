@@ -1,0 +1,32 @@
+@import '../../../themes/variables-light.scss';
+@import '../../../styles.scss';
+
+.wrapper {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    position: absolute;
+    z-index: -1;
+    &.wrapper .left,
+    &.wrapper .right {
+        width: 50%;
+        height: 100vh;
+    }
+
+    &.wrapper .right {
+        background-color: $primary;
+    }
+}
+
+.center {
+    height: 100vh;
+    width: 312px;
+    margin: auto;
+    
+    &-image {
+        width: 40vw;
+        margin: auto;
+        margin-top: 25vh;
+        display: block;
+    }
+}

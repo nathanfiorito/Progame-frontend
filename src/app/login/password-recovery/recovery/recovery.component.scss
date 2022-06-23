@@ -1,68 +1,50 @@
 @import '../../../../themes/variables-light.scss';
 @import '../../../../styles.scss';
 
-a:hover{
-    cursor: pointer;
+button, input {
+    justify-content: space-around;
+    display: block;
+    width: 312px;
 }
 
-button:hover{
-    cursor: pointer;
+input {
+    margin: 1rem 0;
 }
 
-.header{
-    margin-bottom: 6vh;
-}
-
-.grid {
-    display: grid;
-    grid-template: 'recovery bg bg';
-}
-
-.login {
-    grid-area: recovery;
-    height: 100vh;
-}
-
-.bg {
-    background-color: $primary;
-    grid-area: bg;
-    height: 100vh;
-}
-
-.logo {
-    max-width: 240px;
-    margin: 5vh 0vh;
-}
-
-.form {
-    max-width: 343px;
-
-    justify-content: center;
-    justify-items: center;
-    align-items: center;
-    text-align: center;
-}
-
-.form > input{
-    margin: 1.5vh 0;
-}
-
-
-.form > button{
-    margin-top: 1.5vh;
-}
-
-.form > button{
-    margin-top: 4vh;
+button {
+    margin: 2.5rem 0;
 }
 
 .center {
-    margin-left: auto;
-    margin-right: auto;
+    height: 100vh;
+    width: 312px;
+    margin: auto;
+    
+    &-image {
+        width: 40vw;
+        margin: auto;
+        margin-top: 25vh;
+        display: block;
+    }
 }
 
-.center-image {
-    margin: auto;
-    margin-top: 25vh;
-    display: block;
+.logo {
+    margin-top: 1.3rem;
+    margin-bottom: 13.5rem;
+}
+
+.title {
+    margin-bottom: 0.5rem;
+}
+
+.subtitle{
+    margin-bottom: 2.5rem;
+}
+
+.a-btn {
+    margin-top: 10rem;
+}
+
+.create:hover {
+    cursor: pointer;
 }

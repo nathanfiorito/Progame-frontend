@@ -11,11 +11,11 @@
 
 h1, 
 h2, 
-h3 {
+h3,
+h4 {
     font-weight: bold;
 }
 
-h4, 
 h5,
 h6 {
     font-weight: 600;
@@ -46,18 +46,18 @@ h6 {
 }
 
 p {
-    font-size: 0.875rem;
+    font-size: 1rem;
 }
 
 small {
     font-size: 0.75rem
 }
 
-.title {
-    font-family: $poppins;
-    font-size: $font-size;
-    font-weight: bold;
-    line-height: 50px;
+.grid {
+    display: grid;
+    grid-template-columns: repeat(12, 72px);
+    grid-gap: 32px;
+    justify-content: center;
 }
 
 .fsize{
