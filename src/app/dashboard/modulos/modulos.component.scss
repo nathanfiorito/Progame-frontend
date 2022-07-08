@@ -1,8 +1,29 @@
 @import '../../../styles.scss';
-main {
+
+.main {
   padding: 1.5rem;
   border-radius: 12px;
   background-color: white;
+  overflow: scroll;
+  max-height: 700px;
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+
+.main::-webkit-scrollbar {
+  width: 8px;
+}
+
+.main::-webkit-scrollbar-track {
+  background: $grey-2;
+}
+
+.main::-webkit-scrollbar-thumb {
+  background: $grey-6;
+  border-radius: 5px;
+}
+
+p {
+  color: $grey-6;
 }
 
 .title{
@@ -24,34 +45,41 @@ main {
 }
 
 .tasks{
-
+  margin-top: 1.5rem;
+  margin-left: 2rem;
+  display: flex;
+  justify-content: space-between;
+  & li {
+      display: inline;
+  }
 }
 
 .modules {
-  margin-top: 4rem;
-  margin-left: 2rem;
+  
+  
+}
+
+.scroll {
+  background-color: #83838F;
 }
 
 .module{
+  margin-top: 4rem;
+  margin-left: 2rem;
   display: flex;
-  flex-wrap: wrap;
   flex-direction: row;
-  gap: 20px;
-  margin: 20px 0px;
+  gap: 1.5rem;
   position: relative;
+  img{
+    display: inline;
+    max-width: 200px;
+  }
 
   div{
-    flex: 1 1 350px;
-
-    img{
-      max-width: 200px;
-    }
-
+    flex: 1 1 200px;
     button{
       position: absolute;
       margin-bottom: 0px;
     }
   }
-
-
 }

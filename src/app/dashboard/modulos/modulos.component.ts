@@ -9,6 +9,7 @@ import { ModuleService } from 'src/app/shared/services/module/module.service';
 })
 export class ModulosComponent implements OnInit {
   modules!: Module[];
+  filter!: string;
 
   constructor(private moduleService: ModuleService) { }
 
@@ -17,6 +18,14 @@ export class ModulosComponent implements OnInit {
     this.moduleService.getAllModules().then(response => this.modules = response);
   }
 
-
+  filterModules(buttonName: any){
+    if(this.filter === buttonName.innerText){
+      this.filter = '';
+    }
+    else{
+      this.filter = buttonName.innerText
+    }
+    console.log(this.filter)
+  }
 
 }

@@ -12,11 +12,13 @@
 
 .modulos {
   margin-top: 4rem;;
-  grid-column: 1/7;
+  grid-column: 1/8;
 }
 
 .social {
+  border-radius: 12px;
   margin-top: 4rem;
-  grid-column: 7/12;
+  grid-column: 8/13;
   background-color: white;
+  max-height: 650px;
 }

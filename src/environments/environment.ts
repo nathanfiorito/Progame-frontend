@@ -1,6 +1,6 @@
 export const environment = {
   production: false,
-  apiURL: 'https://progame-backend.herokuapp.com'
+  apiURL: 'http://localhost:3000'
 };
 
 

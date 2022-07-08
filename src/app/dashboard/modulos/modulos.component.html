@@ -1,24 +1,25 @@
-<main>
+<div class="main">
+  <div class="scrollmenu"></div>
   <div class="title">
     <h4>Estudar</h4>
     <p>4 tarefas</p>
   </div>
-  <div class="task">
-    <ul>
-      <li><button app-button class="primary">Lógica</button></li>
-      <li><button app-button class="primary">C# Básico</button></li>
-      <li><button app-button class="primary">POO</button></li>
-      <li><button app-button class="primary">Avançado</button></li>
+  <div>
+    <ul class="tasks">
+      <li><button app-button size="small" color="secondary" (click)="filterModules($event.target)">Lógica</button></li>
+      <li><button app-button size="small" color="secondary" (click)="filterModules($event.target)">C# Básico</button></li>
+      <li><button app-button size="small" color="secondary" (click)="filterModules($event.target)">POO</button></li>
+      <li><button app-button size="small" color="secondary" (click)="filterModules($event.target)">Avançado</button></li>
     </ul>
   </div>
-  <ul class="modules" *ngFor="let module of this.modules">
-    <li class="module">
+  <ul class="modules">
+    <li class="module" *ngFor="let module of this.modules">
       <img src="{{module.image}}">
       <div>
-        <h3>{{module.title}}</h3>
-        <h5>{{module.resume}}</h5>
+        <h5>Lógica de Programação I</h5>
+        <p>{{module.resume}}</p>
         <button class='btn-cl-green center block' type='submit'><span class='btn-title'>Comecar</span></button>
       </div>
     </li>
   </ul>
-</main>
+</div>

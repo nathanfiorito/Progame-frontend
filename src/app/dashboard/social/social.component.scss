@@ -1,23 +1,48 @@
 @import '../../../themes/variables-light.scss';
 @import '../../../styles.scss';
 
+.center {
+  border: 12px;
+  padding-top: 56px;
+  padding-bottom: 56px;
+  max-width: 650px;
+}
+
 .title{
-  margin: 20px 0px 0px 20px;
+  // margin-top: 56px;
+  text-align: center;
+}
+
+small {
+  color: $grey-6;
 }
 
 .links{
-  display: flex;
-  flex-wrap: row wrap;
+  display: block;
+  margin-top: 24px;
   &>div{
-    margin: 15px;
+    margin-left: 32px;
     text-align: center;
     align-items: center;
-    justify-content: center;
+    justify-content: start;
     &>img{
       border-radius: 100px;
-      max-width: 50px;
-      max-height: 50px;
+      max-width: 80px;
+      max-height: 80px;
       margin-right: 5px;
     }
+  }
+  & div+div{
+    margin-top: 16px;
+  }
+}
+
+.link {
+  display: flex;
+  flex-direction: row;
+  &>div{
+    margin-left: 24px;
+    text-align: left;
+
   }
 }
