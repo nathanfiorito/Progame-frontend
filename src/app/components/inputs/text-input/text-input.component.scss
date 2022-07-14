@@ -14,7 +14,9 @@
     
     &:hover{
         border: 1px solid $primary;
-        margin: -1px;
+        box-sizing: border-box
+        // box-shadow: 0 0 0 0 1px $primary
+        // margin: 0px;
     }
     
     &:focus{

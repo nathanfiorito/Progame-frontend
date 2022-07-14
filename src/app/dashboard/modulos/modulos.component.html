@@ -6,10 +6,9 @@
   </div>
   <div>
     <ul class="tasks">
-      <li><button app-button size="small" color="secondary" (click)="filterModules($event.target)">Lógica</button></li>
-      <li><button app-button size="small" color="secondary" (click)="filterModules($event.target)">C# Básico</button></li>
-      <li><button app-button size="small" color="secondary" (click)="filterModules($event.target)">POO</button></li>
-      <li><button app-button size="small" color="secondary" (click)="filterModules($event.target)">Avançado</button></li>
+      <li *ngFor="let category of this.category">
+        <button app-button size="small" [color]="category.id ===  this.filter ? 'primary' : 'secondary'" (click)="filterModules(category.id)">{{category.name}}</button>
+      </li>
     </ul>
   </div>
   <ul class="modules">
@@ -18,7 +17,7 @@
       <div>
         <h5>Lógica de Programação I</h5>
         <p>{{module.resume}}</p>
-        <button class='btn-cl-green center block' type='submit'><span class='btn-title'>Comecar</span></button>
+        <button app-button size="small" color="primary" type='submit'>Começar!</button>
       </div>
     </li>
   </ul>

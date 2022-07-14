@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Category } from 'src/app/shared/entity/category.entity';
 import { Module } from 'src/app/shared/entity/module.entity';
+import { CategoryService } from 'src/app/shared/services/category/category.service';
 import { ModuleService } from 'src/app/shared/services/module/module.service';
 
 @Component({
@@ -8,24 +10,41 @@ import { ModuleService } from 'src/app/shared/services/module/module.service';
   styleUrls: ['./modulos.component.scss']
 })
 export class ModulosComponent implements OnInit {
+  modulesResponse!: Module[];
   modules!: Module[];
-  filter!: string;
+  category!: Category[];
+  filter!: number;
 
-  constructor(private moduleService: ModuleService) { }
+  constructor(private moduleService: ModuleService,
+              private categoryService: CategoryService
+              ) { }
 
 
   ngOnInit(): void {
-    this.moduleService.getAllModules().then(response => this.modules = response);
+    this.getModules();
+    this.getCategory();
+    
   }
 
-  filterModules(buttonName: any){
-    if(this.filter === buttonName.innerText){
-      this.filter = '';
+  getModules(){
+    this.moduleService.getAllModules().then(response => {
+      this.modulesResponse = response
+      this.modules = this.modulesResponse;
+    });
+  }
+
+  getCategory(){
+    this.categoryService.getAllModules().then(response => this.category = response);
+  }
+
+  async filterModules(categoryId: number){
+    if(this.filter === categoryId){
+      this.filter = 0;
+      this.modules = this.modulesResponse
     }
     else{
-      this.filter = buttonName.innerText
+      this.filter = categoryId
+      this.modules = this.modulesResponse.filter(module => module.category.id == this.filter)
     }
-    console.log(this.filter)
   }
-
 }

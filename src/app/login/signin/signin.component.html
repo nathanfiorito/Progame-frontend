@@ -7,7 +7,7 @@
                 <h4 class='title'>Entre em sua conta</h4>
                 <form class='form' [formGroup]="formLogin" novalidate>
                     <input text-input type="text" placeholder="Username" formControlName='username'>
-                    <input text-input [type]="show ? 'text' : 'password'" icon="left" placeholder="Insira sua senha" formControlName='password' minlength="8">
+                    <input text-input  icon="left" placeholder="Insira sua senha" formControlName='password' minlength="8">
                     <button app-button (click)='efetuarLogin()'>Entrar</button>
                     <p class='a-btn '>Não tem uma conta? <a class='cl-primary create' (click)='redirectToSingup()'>Criar conta</a></p>
                 </form>
