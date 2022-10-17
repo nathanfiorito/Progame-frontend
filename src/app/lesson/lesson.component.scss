@@ -1,0 +1,24 @@
+@import '../../themes/variables-light.scss';
+@import '../../styles.scss';
+
+.bg {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-color: #F5F5F5;
+  z-index: -1;
+  top: 0;
+}
+
+.resume {
+    margin-top: 4rem;;
+    grid-column: 1/8;
+  }
+  
+  .question {
+    border-radius: 12px;
+    margin-top: 4rem;
+    grid-column: 8/13;
+    background-color: white;
+    max-height: 650px;
+  }

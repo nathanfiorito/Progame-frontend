@@ -32,6 +32,7 @@ export class HeaderComponent implements OnInit {
 
   getUserInfo(){
     this.token = this.getDecodedAccessToken(this.cookieService.get('accessToken'));
+    console.log(this.token)
     this.calculateUserExp(this.token.experience);
     this.barPercentage = '0';
   }

@@ -42,7 +42,7 @@ export class SigninComponent implements OnInit {
     this.errors = [];
 
     await this.authService.signin(signinDTO).then((success) => {
-      this.cookieService.set('accessToken',success.accessToken)
+      this.cookieService.set('accessToken',success.Data)
       this.redirectToDashboard();
     }).catch((response: HttpErrorResponse) => {
       this.errors = Utils.showErrors(response);

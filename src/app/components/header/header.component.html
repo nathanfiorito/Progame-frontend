@@ -6,23 +6,10 @@
     <a (click)="this.redirectToRanking()" [ngClass]="page === 'ranking' ? 'page-link active' : 'page-link'">Ranking</a>
   </div>
 
-  <div class="level-details-container">
-    <img class="level-icon" src="../../../assets/level.svg">
-    <div>
-      <div class="level-description">
-        <span class="fweight-bold fsize-14 cl-primary level-current">Nível {{this.level}}</span>
-        <div>
-          <span class="level-miss">+{{this.experience}} xp até</span>
-          <span class="fweight-400 fsize-14 cl-primary level-next">Nível {{this.level + 1}}</span>
-        </div>
-      </div>
-      <progress-bar [progress]="barPercentage" [color]="'#9146FF'" [disable-percentage]="true">
-      </progress-bar>
-    </div>
-  </div>
+  <app-level [logo]="true" [experience]="this.token.experience"></app-level>
 
   <div class="profile-container">
-    <span class="profile-salution">Olá, Ezio Auditore</span>
+    <span class="profile-salution">Olá, {{this.token.username}}</span>
     <img class="profile-image" src="https://deno-avatar.deno.dev/avatar/Ezio Auditore">
   </div>
 </nav>

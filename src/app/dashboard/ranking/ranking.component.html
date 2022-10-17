@@ -1,27 +1,25 @@
-<header class='nav'></header>
-    <div class='card' style="padding: 1.5rem;">
-      <div style="display: flex; justify-content: space-between; align-items: center;">
-        <h1 class="title fsize-32">Ranking Geral</h1>
-        <p>23 participants</p>
-      </div>
+<header></header>
+<div class="bg"></div>
+<div class="grid">
+  <div class="card header">
+    <h4>Ranking Geral</h4>
+    <p>{{this.users.length}} participantes</p>
+  </div>
+  <div class="card top">
+    <div class="top-player" *ngFor="let user of this.topUsers">
+      <h6>Membro desde {{this.getDate(user.CreatedAt)}}</h6>
+      <img src="https://media-exp1.licdn.com/dms/image/C4E03AQFJ9pj3O3p6lA/profile-displayphoto-shrink_800_800/0/1648518774435?e=1662595200&v=beta&t=iL31-D5jVQFlFn4U41RQG5lc2zx61bAhkUS987jEfyQ" alt="">
+      <h5>{{user.Username}}</h5>
+      <app-level [experience]="user.Experience"></app-level>
     </div>
-    <div style="display: flex;">
-      <div class='card participant-card' style="padding: 1.5rem; width: 100%;">
-        <div class="participant-pic" style="background-image: url(https://deno-avatar.deno.dev/avatar/luiso);">
-  
-        </div>
-        <p class="participant-name">Ezio Auditore</p>
-      </div>
-      <div class='card participant-card' style="padding: 1.5rem; width: 100%;">
-        <div class="participant-pic" style="background-image: url(https://deno-avatar.deno.dev/avatar/luiso);">
-  
-        </div>
-        <p class="participant-name">Ezio Auditore</p>
-      </div>
-      <div class='card participant-card' style="padding: 1.5rem; width: 100%;">
-        <div class="participant-pic" style="background-image: url(https://deno-avatar.deno.dev/avatar/luiso);">
-  
-        </div>
-        <p class="participant-name">Ezio Auditore</p>
-      </div>
+  </div>
+  <div class="card player" *ngFor="let user of this.users;let indexOfelement=index;">
+    {{indexOfelement+4}}
+    <div class="imgtext">
+      <img src="https://media-exp1.licdn.com/dms/image/C4E03AQFJ9pj3O3p6lA/profile-displayphoto-shrink_800_800/0/1648518774435?e=1662595200&v=beta&t=iL31-D5jVQFlFn4U41RQG5lc2zx61bAhkUS987jEfyQ" alt="">
+      <h5>{{user.Username}}</h5>
     </div>
+    <app-level [experience]="user.Experience"></app-level>
+    <h6>Membro desde {{this.getDate(user.CreatedAt)}}</h6>
+  </div>
+</div>

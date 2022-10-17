@@ -1,0 +1,10 @@
+@import '../../../styles.scss';
+
+.main {
+  padding: 1.5rem;
+  border-radius: 12px;
+  background-color: white;
+  max-height: 700px;
+  //   overflow: scroll;
+  //   overflow-x: hidden; /* Hide horizontal scrollbar */
+}

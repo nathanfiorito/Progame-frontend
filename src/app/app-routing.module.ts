@@ -5,6 +5,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { RankingComponent } from './dashboard/ranking/ranking.component';
 import { AuthGuard } from './guards/auth.guard';
 import { HomeComponent } from './home/home.component';
+import { LessonComponent } from './lesson/lesson.component';
 import { PasswordRecoveryComponent } from './login/password-recovery/password-recovery/password-recovery.component';
 import { SigninComponent } from './login/signin/signin.component';
 import { SignupComponent } from './login/signup/signup.component';
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'teste', component: TextInputComponent, pathMatch: 'full'},
   { path: 'dashboard', component: DashboardComponent, pathMatch: 'full',canActivate: [AuthGuard] },
   { path: 'ranking', component: RankingComponent, pathMatch: 'full',canActivate: [AuthGuard] },
+  { path: 'lesson', component: LessonComponent, pathMatch: 'full',canActivate: [AuthGuard] },
 ];
 
 @NgModule({

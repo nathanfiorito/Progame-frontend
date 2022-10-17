@@ -7,7 +7,7 @@ import { CookieService } from 'ngx-cookie-service';
 @Injectable({
   providedIn: 'root'
 })
-export class ModuleService {
+export class UserService {
     token!: string;
 
   constructor(
@@ -19,7 +19,7 @@ export class ModuleService {
     }
 
 
-    async getAllModules(): Promise<any>{
+    async getAllUsers(): Promise<any>{
       const httpOptions = {
         headers: new HttpHeaders({
           'content-type': 'application/json',
@@ -30,7 +30,7 @@ export class ModuleService {
         })
       }
 
-      let response = await this.http.get(`${environment.apiURL}/module/FindAllAsync`, httpOptions).toPromise();
+      let response = await this.http.get(`${environment.apiURL}/auth/FindAllAsync`, httpOptions).toPromise();
       return response;
     }
 }

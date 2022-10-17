@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Category } from 'src/app/shared/entity/category.entity';
 import { Module } from 'src/app/shared/entity/module.entity';
 import { CategoryService } from 'src/app/shared/services/category/category.service';
@@ -16,7 +17,8 @@ export class ModulosComponent implements OnInit {
   filter!: number;
 
   constructor(private moduleService: ModuleService,
-              private categoryService: CategoryService
+              private categoryService: CategoryService,
+              private router: Router
               ) { }
 
 
@@ -28,13 +30,21 @@ export class ModulosComponent implements OnInit {
 
   getModules(){
     this.moduleService.getAllModules().then(response => {
-      this.modulesResponse = response
+      this.modulesResponse = response.Data
       this.modules = this.modulesResponse;
     });
   }
 
   getCategory(){
-    this.categoryService.getAllModules().then(response => this.category = response);
+    this.categoryService.getAllModules().then(response => {
+      this.category = response.Data
+    });
+  }
+
+  startModule(event:any){
+    this.categoryService.getModuleById(event.target.value).then(response => {
+      this.router.navigate(['lesson', {category: response.Data}])
+    })
   }
 
   async filterModules(categoryId: number){
@@ -44,7 +54,7 @@ export class ModulosComponent implements OnInit {
     }
     else{
       this.filter = categoryId
-      this.modules = this.modulesResponse.filter(module => module.category.id == this.filter)
+      this.modules = this.modulesResponse.filter(module => module.CategoryId == this.filter)
     }
   }
 }

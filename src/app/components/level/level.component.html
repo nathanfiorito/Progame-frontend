@@ -1,0 +1,14 @@
+<div class="level-details-container">
+    <img *ngIf='this.logo' class="level-icon" src="../../../assets/level.svg">
+    <div>
+      <div class="level-description">
+        <span class="fweight-bold fsize-14 cl-primary level-current">Nível {{this.level}}</span>
+        <div>
+          <span class="level-miss">+{{this.experience}} xp até</span>
+          <span class="fweight-400 fsize-14 cl-primary level-next">Nível {{this.level + 1}}</span>
+        </div>
+      </div>
+      <progress-bar [progress]="barPercentage" [color]="'#9146FF'" [disable-percentage]="true">
+      </progress-bar>
+    </div>
+  </div>

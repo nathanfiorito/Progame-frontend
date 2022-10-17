@@ -1,12 +1,78 @@
 @import '../../../styles.scss';
 @import '../../../themes/variables-light.scss';
 
-.containter{
-    display: flex!important;
-    flex-direction: row;
-    background-color: #ededed;
+.bg{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: #F5F5F5;
+    z-index: -1;
+    top: 0;
+}
 
-    div{
-        flex: 1 1 200px;
+.card{
+    background-color: white;
+    grid-column: 1/13;
+}
+
+.top{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.header{
+    padding: 3.5rem 2rem;
+    margin-top: 2.75rem;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 0.75rem;
+}
+
+.player {
+    padding: 1.5rem;
+    display: flex;
+    display: row;
+    vertical-align: middle;
+    justify-content: space-around;
+    & img {
+        margin: auto;
+        max-width: 71px;
+        max-height: 71px;
+        border-radius: 50%;
+        margin-bottom: 1.5rem;
+    }
+
+    & h6 {
+        color: $grey-6;
+    }
+}
+
+.imgtext {
+    display: flex;
+    flex-direction: row;
+    & h5{
+        margin-left: 2rem;
+    }
+}
+
+.top-player{
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    & h6{
+        margin-bottom: 1.75rem;
+        color: $grey-6;
+    }
+    & img {
+        margin: auto;
+        max-width: 158px;
+        max-height: 158px;
+        border-radius: 50%;
+        margin-bottom: 1.75rem;
+    }
+    & p {
+        margin-bottom: 2rem;
     }
 }

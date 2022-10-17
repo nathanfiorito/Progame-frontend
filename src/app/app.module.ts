@@ -25,6 +25,10 @@ import { TextInputComponent } from './components/inputs/text-input/text-input.co
 import { ButtonComponent } from './components/buttons/button/button.component';
 import { BackgroundComponent } from './components/background/background.component';
 import { PasswordInputComponent } from './components/inputs/password-input/password-input.component';
+import { LevelComponent } from './components/level/level.component';
+import { LessonComponent } from './lesson/lesson.component';
+import { ResumeComponent } from './lesson/resume/resume.component';
+import { QuestionComponent } from './lesson/question/question.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +52,10 @@ import { PasswordInputComponent } from './components/inputs/password-input/passw
     TextInputComponent,
     PasswordInputComponent,
     BackgroundComponent,
+    LevelComponent,
+    LessonComponent,
+    ResumeComponent,
+    QuestionComponent
   ],
   imports: [
     BrowserModule,
