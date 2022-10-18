@@ -32,19 +32,4 @@ export class CategoryService {
       let response = await this.http.get(`${environment.apiURL}/category/FindAllAsync`, httpOptions).toPromise();
       return response;
     }
-
-    async getModuleById(id: number): Promise<any>{
-      const httpOptions = {
-        headers: new HttpHeaders({
-          'content-type': 'application/json',
-          'observe':'body',
-          'responseType': 'json',
-          'Access-Control-Allow-Origin': '*',
-          'Authorization': `Bearer ${this.token}`,
-        })
-      }
-
-      let response = await this.http.get(`${environment.apiURL}/category/GetOne?Id=${id}`, httpOptions).toPromise();
-      return response;
-    }
 }

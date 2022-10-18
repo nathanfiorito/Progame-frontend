@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Module } from 'src/app/shared/entity/module.entity';
 
 @Component({
   selector: 'app-resume',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./resume.component.scss']
 })
 export class ResumeComponent implements OnInit {
+  @Input()
+  module!: Module
 
   constructor() { }
 

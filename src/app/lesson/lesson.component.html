@@ -1,6 +1,6 @@
 <header></header>
 <div class="bg"></div>
     <div class="grid">
-        <app-resume class='resume'></app-resume>
-        <div class='question'>teste</div>
+        <app-resume class='resume' [module]="this.questionService.moduleWQuestion!.Module"></app-resume>
+        <app-question class='question' [questions]="this.questionService.moduleWQuestion!.Questions">teste</app-question>
     </div>

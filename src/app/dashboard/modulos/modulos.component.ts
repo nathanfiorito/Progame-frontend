@@ -4,6 +4,7 @@ import { Category } from 'src/app/shared/entity/category.entity';
 import { Module } from 'src/app/shared/entity/module.entity';
 import { CategoryService } from 'src/app/shared/services/category/category.service';
 import { ModuleService } from 'src/app/shared/services/module/module.service';
+import { QuestionService } from 'src/app/shared/services/question/question.service';
 
 @Component({
   selector: 'app-modulos',
@@ -18,7 +19,8 @@ export class ModulosComponent implements OnInit {
 
   constructor(private moduleService: ModuleService,
               private categoryService: CategoryService,
-              private router: Router
+              private router: Router,
+              private questionService: QuestionService
               ) { }
 
 
@@ -42,8 +44,10 @@ export class ModulosComponent implements OnInit {
   }
 
   startModule(event:any){
-    this.categoryService.getModuleById(event.target.value).then(response => {
-      this.router.navigate(['lesson', {category: response.Data}])
+    this.moduleService.getModuleWithQuestion(event.target.value).then(response => {
+      console.log(response.Data)
+      this.questionService.moduleWQuestion = response.Data
+      this.router.navigate(['lesson'])
     })
   }
 

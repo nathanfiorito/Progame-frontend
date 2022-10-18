@@ -33,4 +33,34 @@ export class ModuleService {
       let response = await this.http.get(`${environment.apiURL}/module/FindAllAsync`, httpOptions).toPromise();
       return response;
     }
+
+    async getModuleById(id: number): Promise<any>{
+      const httpOptions = {
+        headers: new HttpHeaders({
+          'content-type': 'application/json',
+          'observe':'body',
+          'responseType': 'json',
+          'Access-Control-Allow-Origin': '*',
+          'Authorization': `Bearer ${this.token}`,
+        })
+      }
+
+      let response = await this.http.get(`${environment.apiURL}/module/GetOne?Id=${id}`, httpOptions).toPromise();
+      return response;
+    }
+
+    async getModuleWithQuestion(id: number): Promise<any>{
+      const httpOptions = {
+        headers: new HttpHeaders({
+          'content-type': 'application/json',
+          'observe':'body',
+          'responseType': 'json',
+          'Access-Control-Allow-Origin': '*',
+          'Authorization': `Bearer ${this.token}`,
+        })
+      }
+
+      let response = await this.http.get(`${environment.apiURL}/module/GetWithQuestion?Id=${id}`, httpOptions).toPromise();
+      return response;
+    }
 }

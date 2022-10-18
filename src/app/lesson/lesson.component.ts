@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Module } from '../shared/entity/module.entity';
+import { QuestionService } from '../shared/services/question/question.service';
 
 @Component({
   selector: 'app-lesson',
@@ -6,10 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./lesson.component.scss']
 })
 export class LessonComponent implements OnInit {
+  module!: Module
 
-  constructor() { }
+  constructor(public questionService: QuestionService) { }
 
   ngOnInit(): void {
+    this.module = this.questionService.moduleWQuestion!.Module
+    console.log(this.questionService.moduleWQuestion!.Questions)
   }
 
 }
