@@ -15,8 +15,7 @@ export class LevelComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(this.experience)
-      this.getExp();
+    this.getExp();
   }
 
   getExp(){
@@ -27,5 +26,5 @@ export class LevelComponent implements OnInit {
   calculateUserExp(exp: number){
     this.experience = exp % 100;
     this.level = Math.round(exp / 100);
-}
+  }
 }

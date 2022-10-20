@@ -1,3 +1,14 @@
 <div class='center'>
-    {{this.questions[0].QuestionText}} 
+    <p class="fweight-400">Questão {{this.questionCounter + 1}} de {{this.questions.length}}</p>
+    <h6 class="fweight-500">
+        {{this.questions[this.questionCounter].QuestionText}}
+    </h6>
+    <div class="answers" >
+        <div *ngFor="let answer of this.answers; let i = index">
+            <input type="radio" id="{{answer.Id}}" value="{{i}}" name="answer" (click)="this.changeAnswer($event)">
+            <label for="{{answer.Id}}">{{answer.AnswerText}}</label>
+        </div>
+    </div>
+    <button *ngIf="isLastQuestion" app-button color="primary" size="medium" (click)="checkResult()">Finalizar</button>
+    <button *ngIf="!isLastQuestion" app-button color="primary" size="medium" (click)="confirmAnswer()">Confirmar</button>
 </div>

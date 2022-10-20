@@ -3,7 +3,34 @@
 
 .center {
   border: 12px;
-  padding-top: 56px;
-  padding-bottom: 56px;
+  padding-top: 2.5rem;
+  padding-left: 56px;
   max-width: 650px;
+  height: 100%;
+  position: relative;
+}
+
+.answers{
+  position: absolute;
+  bottom: 8rem;
+
+  & > * {
+    margin-top: 1rem;
+  }
+}
+
+p {
+  color: $grey-7;
+  margin-bottom: 0.5rem;
+}
+
+h6 {
+  color: $grey-8;
+  // font-size: ;
+}
+
+button{
+  position: absolute;
+  bottom: 2.5rem;
+  right: 2.5rem;
 }

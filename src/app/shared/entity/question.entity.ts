@@ -1,9 +1,9 @@
 export class Question{
     Id!: number;
     QuestionText!: string;
-    ModuleId!: string;
-    CorrectAnswerId!: string;
-    QuestionTypeId!: string;
+    ModuleId!: number;
+    CorrectAnswerId!: number;
+    QuestionTypeId!: number;
     CreatedAt!: Date;
     UpdatedAt!: Date;
 }

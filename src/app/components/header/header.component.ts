@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import jwt_decode from 'jwt-decode';
 import { Token } from 'src/app/shared/entity/token.entity';
+import { UserService } from 'src/app/shared/services/user/user.service';
 
 @Component({
   selector: 'header',
@@ -18,13 +19,16 @@ export class HeaderComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private cookieService: CookieService
+    private cookieService: CookieService,
+    public userService: UserService
     ) {
-    
-  }
+      this.userService.getUserExp().then(response => {
+        this.experience = response.Data
+        this.getUserInfo();
+      })
+    }
 
   ngOnInit(): void {
-    this.getUserInfo();
     this.page = this.router.url.includes('ranking') ? 'ranking' : 'dashboard';
     (<HTMLElement>document.getElementsByClassName('progress-inner')[0]).innerText = '';
   }
@@ -32,12 +36,12 @@ export class HeaderComponent implements OnInit {
 
   getUserInfo(){
     this.token = this.getDecodedAccessToken(this.cookieService.get('accessToken'));
-    console.log(this.token)
-    this.calculateUserExp(this.token.experience);
+    this.calculateUserExp(this.experience);
     this.barPercentage = '0';
   }
 
   calculateUserExp(exp: number){
+    console.log(exp)
     this.experience = exp % 100;
     this.level = Math.round(exp / 100);
   }
