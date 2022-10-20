@@ -1,0 +1,29 @@
+@import '../../../themes/variables-light.scss';
+@import '../../../styles.scss';
+
+.center {
+    border: 12px;
+    padding-top: 2.5rem;
+    // padding-left: 56px;
+    // max-width: 650px;
+    height: 100%;
+    position: relative;
+    text-align: center;
+  }
+
+h3{
+    margin-bottom: 0.5rem;
+    color: $success;
+}
+
+h5{
+    margin-bottom: 3.5rem;
+}
+
+img{
+    width: 26.5rem;
+}
+
+button{
+    margin-top: 3.5rem;
+}

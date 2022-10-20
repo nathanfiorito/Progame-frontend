@@ -1,6 +1,8 @@
 <header></header>
 <div class="bg"></div>
     <div class="grid">
-        <app-resume class='resume' [module]="this.questionService.moduleWQuestion!.Module"></app-resume>
-        <app-question class='question' [questions]="this.questionService.moduleWQuestion!.Questions">teste</app-question>
+        <app-success *ngIf="statusLesson === 'success'" class="status" [questionsCount]="this.questionService.moduleWQuestion!.Questions.length"></app-success>
+        <app-failure *ngIf="statusLesson === 'failure'" class="status" [questionsCount]="this.questionService.moduleWQuestion!.Questions.length"></app-failure>
+        <app-resume *ngIf="statusLesson == 'none'" class='resume' [module]="this.questionService.moduleWQuestion!.Module"></app-resume>
+        <app-question *ngIf="statusLesson == 'none'" (statusLesson)="getStatus($event)" class='question' [questions]="this.questionService.moduleWQuestion!.Questions">teste</app-question>
     </div>

@@ -52,8 +52,6 @@ export class CompletedModulesService {
         }
         
         this.token = this.getDecodedAccessToken(this.cookieService.get('accessToken'))
-  
-        console.log(this.token.id)
 
         let response = await this.http.get(`${environment.apiURL}/CompletedModule/GetByUser?Id=${this.token.id}`, httpOptions).toPromise();
         return response;

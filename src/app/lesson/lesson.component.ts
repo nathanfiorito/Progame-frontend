@@ -10,11 +10,15 @@ import { QuestionService } from '../shared/services/question/question.service';
 export class LessonComponent implements OnInit {
   module!: Module
 
+  statusLesson: 'success' | 'failure' | 'none' = 'none';
+
   constructor(public questionService: QuestionService) { }
 
   ngOnInit(): void {
     this.module = this.questionService.moduleWQuestion!.Module
-    console.log(this.questionService.moduleWQuestion!.Questions)
   }
 
+  getStatus(event: any){
+    this.statusLesson = event
+  }
 }

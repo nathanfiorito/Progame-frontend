@@ -10,6 +10,7 @@ import { Answer } from '../../entity/answer.entity';
 })
 export class AnswerService {
     public answer!: Answer[];
+    public correctAnswers!: number;
     
     token!: string;
 
@@ -34,6 +35,10 @@ export class AnswerService {
 
         let response = await this.http.get(`${environment.apiURL}/answer/GetAnswerByQuestionId?Id=${moduleId}`, httpOptions).toPromise();
         return response;
+    }
+
+    setCorrectAnsers(value: number){
+      this.correctAnswers = value
     }
 
 }

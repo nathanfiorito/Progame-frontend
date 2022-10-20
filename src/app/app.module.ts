@@ -29,6 +29,8 @@ import { LevelComponent } from './components/level/level.component';
 import { LessonComponent } from './lesson/lesson.component';
 import { ResumeComponent } from './lesson/resume/resume.component';
 import { QuestionComponent } from './lesson/question/question.component';
+import { FailureComponent } from './lesson/failure/failure.component';
+import { SuccessComponent } from './lesson/success/success.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +57,9 @@ import { QuestionComponent } from './lesson/question/question.component';
     LevelComponent,
     LessonComponent,
     ResumeComponent,
-    QuestionComponent
+    QuestionComponent,
+    FailureComponent,
+    SuccessComponent
   ],
   imports: [
     BrowserModule,

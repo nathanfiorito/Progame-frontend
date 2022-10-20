@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { Answer } from 'src/app/shared/entity/answer.entity';
 import { Question } from 'src/app/shared/entity/question.entity';
@@ -15,6 +15,9 @@ export class QuestionComponent implements OnInit {
   @Input()
   questions!: Question[]
 
+  @Output()
+  statusLesson: EventEmitter<string> = new EventEmitter<string>();
+
   answers!: Answer[]
   answer!: Answer;
   isLastQuestion: boolean = false;
@@ -28,8 +31,6 @@ export class QuestionComponent implements OnInit {
     private ref:ChangeDetectorRef) { }
 
   ngOnInit() {
-    console.log(this.questionCounter)
-    console.log(this.questions)
     this.answerService.getAnswersByModuleId(this.questions[this.questionCounter].Id).then((response) => {
       this.answers = response.Data;
     })
@@ -45,7 +46,6 @@ export class QuestionComponent implements OnInit {
   nextQuestion(){
     this.questionCounter++;
     if(this.questionCounter <= this.questions.length - 1){
-      console.log(this.questions[this.questionCounter])
       this.answerService.getAnswersByModuleId(this.questions[this.questionCounter].Id).then((response) => {
         this.answers = response.Data
         this.ref.detectChanges();
@@ -66,13 +66,14 @@ export class QuestionComponent implements OnInit {
       this.completedModulesService.completeModule(this.questions[0].ModuleId, exp).then((response) => {
         this.userService.getUserExp().then(response => {
           this.userService.setUserExp = response.Data
-        
-          this.router.navigate(['dashboard'])
+          this.answerService.setCorrectAnsers(this.correctAnswers)
+          this.statusLesson.emit('success');
         })
       })
     }
     else{
-      console.log('reprovado')
+      this.answerService.setCorrectAnsers(this.correctAnswers)
+      this.statusLesson.emit('failure');
     }
   }
 }

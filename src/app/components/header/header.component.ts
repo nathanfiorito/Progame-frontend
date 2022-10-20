@@ -29,6 +29,7 @@ export class HeaderComponent implements OnInit {
     }
 
   ngOnInit(): void {
+    this.token = this.getDecodedAccessToken(this.cookieService.get('accessToken'));
     this.page = this.router.url.includes('ranking') ? 'ranking' : 'dashboard';
     (<HTMLElement>document.getElementsByClassName('progress-inner')[0]).innerText = '';
   }
@@ -41,7 +42,6 @@ export class HeaderComponent implements OnInit {
   }
 
   calculateUserExp(exp: number){
-    console.log(exp)
     this.experience = exp % 100;
     this.level = Math.round(exp / 100);
   }

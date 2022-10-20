@@ -3,13 +3,14 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import {environment} from '../../../../environments/environment'
 import { CookieService } from 'ngx-cookie-service';
+import { ModuleWQuestion } from '../../entity/moduleWQuestion.entity';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ModuleService {
     token!: string;
-
+  public moduleWQuestion!: ModuleWQuestion
   constructor(
     private router: Router,
     private http: HttpClient,

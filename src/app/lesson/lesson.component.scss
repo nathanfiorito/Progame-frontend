@@ -11,14 +11,24 @@
 }
 
 .resume {
-    margin-top: 4rem;;
-    grid-column: 1/8;
-  }
+  margin-top: 4rem;;
+  grid-column: 1/8;
+}
   
-  .question {
-    border-radius: 12px;
-    margin-top: 4rem;
-    grid-column: 8/13;
-    background-color: white;
-    max-height: 650px;
-  }
+.question {
+  border-radius: 12px;
+  margin-top: 4rem;
+  grid-column: 8/13;
+  background-color: white;
+  min-height: 650px;
+}
+
+.status{
+  grid-column: 4/10;
+  background-color: white;
+  border-radius: 12px;
+  margin-top: 4rem;
+  min-height: calc(83vh - 1.5rem);
+  margin-bottom: 1.5rem;
+  // min-height: 100%;
+}
