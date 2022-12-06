@@ -4,6 +4,7 @@ import { CookieService } from 'ngx-cookie-service';
 import jwt_decode from 'jwt-decode';
 import { Token } from 'src/app/shared/entity/token.entity';
 import { UserService } from 'src/app/shared/services/user/user.service';
+import { User } from 'src/app/shared/entity/user.entity';
 
 @Component({
   selector: 'header',
@@ -16,6 +17,7 @@ export class HeaderComponent implements OnInit {
   experience!: number;
   barPercentage!: string;
   page!: string;
+  user!: User;
 
   constructor(
     private router: Router,
@@ -23,28 +25,30 @@ export class HeaderComponent implements OnInit {
     public userService: UserService
     ) {
       this.userService.getUserExp().then(response => {
-        this.experience = response.Data
-        this.getUserInfo();
+        this.user = response.Data
+        this.experience = response.Data.Experience
       })
     }
 
   ngOnInit(): void {
-    this.token = this.getDecodedAccessToken(this.cookieService.get('accessToken'));
     this.page = this.router.url.includes('ranking') ? 'ranking' : 'dashboard';
     (<HTMLElement>document.getElementsByClassName('progress-inner')[0]).innerText = '';
   }
 
 
-  getUserInfo(){
-    this.token = this.getDecodedAccessToken(this.cookieService.get('accessToken'));
-    this.calculateUserExp(this.experience);
-    this.barPercentage = '0';
-  }
+  // getUserInfo(){
+  //   this.token = this.getDecodedAccessToken(this.cookieService.get('accessToken'));
+  //   console.log(this.token)
+  //   this.calculateUserExp(this.experience);
+  //   this.barPercentage = '0';
+  // }
 
-  calculateUserExp(exp: number){
-    this.experience = exp % 100;
-    this.level = Math.round(exp / 100);
-  }
+  // calculateUserExp(exp: number){
+  //   this.experience = exp % 100;
+  //   console.log(this.experience)
+  //   this.level = Math.round(exp / 100);
+  //   console.log(this.level)
+  // }
 
   getDecodedAccessToken(token: string): any {
     try {

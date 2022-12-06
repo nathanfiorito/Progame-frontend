@@ -47,7 +47,7 @@ export class UserService {
         })
       }
 
-      let response = await this.http.get(`${environment.apiURL}/auth/GetExp?Id=${this.token.id}`, httpOptions).toPromise();
+      let response = await this.http.get(`${environment.apiURL}/auth/GetUserInfo?Id=${this.token.id}`, httpOptions).toPromise();
       return response;
     }
 

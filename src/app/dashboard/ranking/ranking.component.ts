@@ -9,6 +9,7 @@ import { UserService } from 'src/app/shared/services/user/user.service';
 })
 export class RankingComponent implements OnInit {
   users!: User[];
+  usersCount!: number;
   topUsers!: User[];
 
   constructor(private userService: UserService,
@@ -17,6 +18,7 @@ export class RankingComponent implements OnInit {
   ngOnInit(): void {
     this.userService.getAllUsers().then(response => {
       this.users = response.Data
+      this.usersCount = this.users.length;
       this.topUsers = this.users.slice(0,3)
       this.users = this.users.slice(3, this.users.length);
     });

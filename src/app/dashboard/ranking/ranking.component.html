@@ -1,14 +1,14 @@
 <header></header>
 <div class="bg"></div>
-<div class="grid">
+<div class="grid bg" >
   <div class="card header">
     <h4>Ranking Geral</h4>
-    <p>{{this.users.length}} participantes</p>
+    <p>{{this.usersCount}} participantes</p>
   </div>
   <div class="card top">
     <div class="top-player" *ngFor="let user of this.topUsers">
       <h6>Membro desde {{this.getDate(user.CreatedAt)}}</h6>
-      <img src="https://media-exp1.licdn.com/dms/image/C4E03AQFJ9pj3O3p6lA/profile-displayphoto-shrink_800_800/0/1648518774435?e=1662595200&v=beta&t=iL31-D5jVQFlFn4U41RQG5lc2zx61bAhkUS987jEfyQ" alt="">
+      <img src={{user.ImgUrl}} alt="">
       <h5>{{user.Username}}</h5>
       <app-level [experience]="user.Experience"></app-level>
     </div>
@@ -16,7 +16,7 @@
   <div class="card player" *ngFor="let user of this.users;let indexOfelement=index;">
     {{indexOfelement+4}}
     <div class="imgtext">
-      <img src="https://media-exp1.licdn.com/dms/image/C4E03AQFJ9pj3O3p6lA/profile-displayphoto-shrink_800_800/0/1648518774435?e=1662595200&v=beta&t=iL31-D5jVQFlFn4U41RQG5lc2zx61bAhkUS987jEfyQ" alt="">
+      <img src={{user.ImgUrl}} alt="">
       <h5>{{user.Username}}</h5>
     </div>
     <app-level [experience]="user.Experience"></app-level>

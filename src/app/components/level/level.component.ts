@@ -1,17 +1,20 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-level',
   templateUrl: './level.component.html',
   styleUrls: ['./level.component.scss'],
 })
-export class LevelComponent implements OnInit {
+export class LevelComponent implements OnInit, AfterViewInit {
   @Input() experience!: number;
   @Input() logo!: boolean;
   level!: number;
   barPercentage!: string;
   
   constructor(){
+  }
+  ngAfterViewInit(): void {
+    this.getExp();
   }
 
   ngOnInit(): void {

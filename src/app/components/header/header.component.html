@@ -6,10 +6,10 @@
     <a (click)="this.redirectToRanking()" [ngClass]="page === 'ranking' ? 'page-link active' : 'page-link'">Ranking</a>
   </div>
 
-  <app-level [logo]="true" [experience]="this.token.experience"></app-level>
+  <app-level [logo]="true" [experience]="this.experience"></app-level>
 
   <div class="profile-container">
-    <span class="profile-salution">Olá, {{this.token.username}}</span>
-    <img class="profile-image" src="https://deno-avatar.deno.dev/avatar/Ezio Auditore">
+    <span class="profile-salution">Olá, {{this.user.Username}}</span>
+    <img class="profile-image" src="{{user.ImgUrl}}">
   </div>
 </nav>

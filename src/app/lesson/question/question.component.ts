@@ -61,6 +61,9 @@ export class QuestionComponent implements OnInit {
   }
 
   checkResult(){
+    if(this.questions[this.questionCounter].CorrectAnswerId === this.answer.Id){
+      this.correctAnswers++;
+    }
     if(this.correctAnswers >= this.answers.length / 2){
       var exp = this.correctAnswers * 30;
       this.completedModulesService.completeModule(this.questions[0].ModuleId, exp).then((response) => {
